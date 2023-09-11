@@ -12,13 +12,13 @@
     <div class="col">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
+          <li class="breadcrumb-item"><a href="/">Clientes</a></li>
           <li class="breadcrumb-item active"><%= customer.firstName %> <%= customer.lastName %></li>
         </ol>
       </nav>
     </div>
     <div class="col text-end fw-lighter">
-      <b>Last Updated: <%= new Date(customer.updatedAt).toUTCString()  %></b>
+      <!-- <b>Last Updated: <%= new Date(customer.updatedAt).toUTCString()  %></b> -->
       <b>UserId:</b> <%= customer._id %>
     </div>
   </div>
@@ -52,15 +52,47 @@
     </div>
   </div>
 
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">Cedula</label>
+      <input type="text" class="form-control" id="cedula" name="cedula" value="<%= customer.cedula %>" placeholder="Cedula" required>
+    </div>
+
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">Altura(cm)</label>
+      <input type="number" class="form-control" id="height" name="height" value="<%= customer.height %>" placeholder="Altura" required>
+    </div>
+
+    <div class="col">
+      <label for="lastName">Peso(kg)</label>
+      <input type="number" class="form-control" id="weight" name="weight" value="<%= customer.weight %>" placeholder="Peso" required>
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">Grasa corporal</label>
+      <input type="number" class="form-control" id="bodyFat" name="bodyFat" value="<%= customer.bodyFat %>" placeholder="Grasa corporal" required>
+    </div>
+
+    <div class="col">
+      <label for="lastName">Masa muscular</label>
+      <input type="number" class="form-control" id="muscleMass" name="muscleMass" value="<%= customer.muscleMass %>" placeholder="Masa Muscular" required>
+    </div>
+  </div>
+
   <div class="form-group mb-4">
-      <label for="details">Customer Details</label>
+      <label for="details">Detalles del cliente</label>
       <textarea class="form-control" name="details" id="details" cols="30" rows="12" placeholder="Customer Details"><%= customer.details %></textarea>
   </div>
 
   <div class="form-group mb-4">
-    <button type="submit" class="btn btn-primary">Update Customer</button>
+    <button type="submit" class="btn btn-primary">Actualizar Cliente</button>
 
-    <button type="button" class="btn btn-danger" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">Delete Customer</button>
+    <button type="button" class="btn btn-danger" data-bs-toggle="modal" id="deleteButton" data-bs-target="#deleteModal">Eliminar Cliente</button>
 
   </div>
 

@@ -10,6 +10,35 @@ const CustomerSchema = new Schema({
     type: String,
     required: true
   },
+  cedula: {
+    type: String,
+    required: false
+  },
+  birthday:{
+    type: Date,
+    required: true
+  },
+  
+  height:{
+    type: Number,
+    required: true
+  },
+  weight:{
+    type: Number,
+    required: true
+  },
+  bodyFat:{
+    type: Number,
+    required: true
+  },
+  muscleMass:{
+    type: Number,
+    required: true
+  },
+  overdue:{
+    type: Boolean,
+    required: false
+  },
   tel: {
     type: String,
     required: true
@@ -29,7 +58,10 @@ const CustomerSchema = new Schema({
   updatedAt: {
     type: Date,
     default: Date.now()
-  }
+  }, 
+  payments: [],
+  registros: [],
+
 });
 
 module.exports = mongoose.model('Customer', CustomerSchema);

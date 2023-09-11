@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Clientes</h1>
+  <h1 class="h2">Registrar Pago</h1>
   <div class="btn-toolbar mb-2 mb-md 0">
     <div class="btn-group me-2">
       <a href="/add" class="btn btn-sm btn-outline-secondary">+ Nuevo Usuario</a>
@@ -41,24 +41,9 @@
 
             <div class="d-flex flex-row justify-content-end gap-2">
 
-              <a href="/view/<%= element._id %>" type="button" class="btn btn-primary btn-small">
-                <i class="bi bi-eye"></i>
+              <a href="/register_payment/<%= element._id %>" type="button" class="btn btn-primary btn-small">
+                <i class="bi bi-credit-card"></i>
               </a>
-
-              <a href="/edit/<%= element._id %>" type="button" class="btn btn-warning btn-small">
-                <i class="bi bi-pencil"></i>
-              </a>
-
-              <a href="/view_historical/<%= element._id %>" type="button" class="btn btn-primary btn-small">
-                <i class="bi bi-clock-history"></i>
-              </a>
-
-
-              <form action="/edit/<%= element._id %>?_method=DELETE" method="POST" class="position-relative">
-                <button type="submit" class="btn btn-danger btn-small">
-                  <i class="bi bi-person-x"></i>
-                </button>
-              </form>
 
             </div>
 

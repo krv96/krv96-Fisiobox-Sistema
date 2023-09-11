@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
-  <h1 class="h2">Customer</h1>
+  <h1 class="h2">Cliente</h1>
   <div class="btn-toolbar mb-2 mb-md 0">
     <div class="btn-group me-2">
       <button class="btn btn-sm btn-outline-secondary">?</button>
@@ -13,7 +13,7 @@
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="/">Dashboard</a></li>
-          <li class="breadcrumb-item active">New Customer</li>
+          <li class="breadcrumb-item active">Nuevo Cliente</li>
         </ol>
       </nav>
     </div>
@@ -29,36 +29,73 @@
 
   <div class="row form-group mb-4">
     <div class="col">
-      <label for="firstName">First Name</label>
-      <input type="text" class="form-control" id="firstName" name="firstName" value="" placeholder="First Name" required>
+      <label for="firstName">Nombre</label>
+      <input type="text" class="form-control" id="firstName" name="firstName" value="" placeholder="Nombre" required>
     </div>
 
     <div class="col">
-      <label for="lastName">Last Name</label>
-      <input type="text" class="form-control" id="lastName" name="lastName" value="" placeholder="Last Name" required>
+      <label for="lastName">Apellido</label>
+      <input type="text" class="form-control" id="lastName" name="lastName" value="" placeholder="Apellido" required>
     </div>
   </div>
 
   <div class="row form-group mb-4">
     <div class="col">
-      <label for="tel">Telephone</label>
-      <input type="text" class="form-control" id="tel" name="tel" value="" placeholder="Telephone" required>
+      <label for="firstName">Cedula</label>
+      <input type="text" class="form-control" id="cedula" name="cedula" value="" placeholder="Cedula" required>
     </div>
 
     <div class="col">
-      <label for="email">Email</label>
-      <input type="text" class="form-control" id="email" name="email" value="" placeholder="Email" required>
+      <label for="lastName">Fecha Nacimiento</label>
+      <input type="date" class="form-control" id="birthday" name="birthday" value="" placeholder="Fecha Nacimiento" required>
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">Altura(cm)</label>
+      <input type="number" class="form-control" id="height" name="height" value="" placeholder="Altura" required>
+    </div>
+
+    <div class="col">
+      <label for="lastName">Peso(kg)</label>
+      <input type="number" class="form-control" id="weight" name="weight" value="" placeholder="Peso" required>
+    </div>
+  </div>
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="firstName">Grasa corporal</label>
+      <input type="number" class="form-control" id="bodyFat" name="bodyFat" value="" placeholder="Grasa corporal" required>
+    </div>
+
+    <div class="col">
+      <label for="lastName">Masa muscular</label>
+      <input type="number" class="form-control" id="muscleMass" name="muscleMass" value="" placeholder="Masa Muscular" required>
+    </div>
+  </div>
+
+
+  <div class="row form-group mb-4">
+    <div class="col">
+      <label for="tel">Celular</label>
+      <input type="text" class="form-control" id="tel" name="tel" value="" placeholder="Celular" required>
+    </div>
+
+    <div class="col">
+      <label for="email">Correo</label>
+      <input type="text" class="form-control" id="email" name="email" value="" placeholder="Correo" required>
     </div>
   </div>
 
 
   <div class="form-group mb-4">
-      <label for="details">Customer Details</label>
-      <textarea class="form-control" name="details" id="details" cols="30" rows="12" placeholder="Customer Details"></textarea>
+      <label for="details">Detalles del cliente</label>
+      <textarea class="form-control" name="details" id="details" cols="30" rows="12" placeholder="Detalles del cliente"></textarea>
   </div>
 
   <div class="form-group mb-4">
-    <button type="submit" class="btn btn-primary">Add Customer</button>
+    <button type="submit" class="btn btn-primary">Agregar Cliente</button>
   </div>
 
   

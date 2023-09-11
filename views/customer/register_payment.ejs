@@ -14,7 +14,7 @@
     <div class="col">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="/">Clientes</a></li>
+          <li class="breadcrumb-item"><a href="/">Registrar Pago</a></li>
           <li class="breadcrumb-item active"><%= customer.firstName  %></li>
         </ol>
       </nav>
@@ -67,7 +67,7 @@
   <li class="list-group-item"> 
     <div class="row">
       <div class="col" style="max-width: 140px"> <b>Fecha Nacimiento:</b></div>
-      <div class="col"><%= customer.birthday %></div>
+      <div class="col"><%= customer.birthday.toISOString().split('T')[0] %></div>
     </div>
   </li>
 
@@ -78,68 +78,39 @@
     </div>
   </li>
 
-  <li class="list-group-item"> 
+    <li class="list-group-item"> 
     <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Altura(cm):</b></div>
-      <div class="col"><%= customer.height %></div>
+      <div class="col" style="max-width: 140px"> <b>Fechas actuales pagadas:</b></div>
+
+      <% recentPayments.forEach(element => { %>
+        <div>
+          <div class="col"><%= element.toISOString().split('T')[0] %></div>
+        </div>
+       
+      <% }) %>      
     </div>
   </li>
 
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Peso(kg):</b></div>
-      <div class="col"><%= customer.weight %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Grasa Corporal:</b></div>
-      <div class="col"><%= customer.bodyFat %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Masa muscular:</b></div>
-      <div class="col"><%= customer.muscleMass %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Última fecha de pago:</b></div>
-      <div class="col"><%= customer.paymentDate %></div>
-    </div>
-  </li>
-
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Detalles:</b></div>
-      <div class="col"><%= customer.details %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Fecha Creacion:</b></div>
-      <div class="col"><%= customer.createdAt %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Fecha Modificacion:</b></div>
-      <div class="col"><%= customer.updatedAt %></div>
-    </div>
-  </li>
+  <form action="/register_payment/<%= customer._id %>?_method=PUT" method="POST">
 
 </ul>
 
+<div class="row form-group mb-4">
+  <!-- <div class="col">
+    <label for="firstName">Siguiente mes por registrar:</label>
+    <select id="payment" name="payment">
+      <option value="<%= firstDayOfNextMonth.toISOString().split('T')[0] %>"><%= firstDayOfNextMonth.toISOString().split('T')[0] %></option>
 
-<div class="btn-toolbar mb-2 mb-md 0">
-  <div class="btn-group me-2">
-    <a href="/view_historical/<%= customer._id %>" class="btn btn-sm btn-outline-secondary" >Ver Historico</a>
+</select>
+  </div> -->
+
+  <div class="col">
+    <label for="lastName">Siguiente mes por registrar:</label>
+    <input type="date" class="form-control" id="payment" name="payment" value="<%= firstDayOfNextMonth.toISOString().split('T')[0] %>" placeholder="Siguiente mes por registrar:" required>
   </div>
+
 </div>
+
+<button type="submit" class="btn btn-primary">Agregar Pago Mensual</button>
+
+</form>

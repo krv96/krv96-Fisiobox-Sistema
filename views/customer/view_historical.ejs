@@ -1,11 +1,11 @@
 <div class="d-flex justify-content-between flex-wrap flex-md nowrap align-items-center pt-3 pb-2 mb-3 border-bottom">
   <h1 class="h2"><%= customer.firstName  %> <%= customer.lastName  %></h1>
-  <!-- <div class="btn-toolbar mb-2 mb-md 0">
+  <div class="btn-toolbar mb-2 mb-md 0">
     <div class="btn-group me-2">
       <button type="button" class="btn btn-sm btn-outline-secondary">Share</button>
       <button type="button" class="btn btn-sm btn-outline-secondary">Export</button>
     </div>
-  </div> -->
+  </div>
 </div>
 
 <div class="col py-3">
@@ -26,27 +26,13 @@
   </div>
 
 </div>
-
-<span>hola</span>
-
+<!-- 
 <ul class="list-group">
 
   <li class="list-group-item"> 
     <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Nombre:</b></div>
+      <div class="col" style="max-width: 140px"> <b>Name:</b></div>
       <div class="col"><%= customer.firstName %> <%= customer.lastName %></div>
-    </div>
-  </li>
-
-  <li class="list-group-item"> 
-    <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Condicion:</b></div>
-      <% if(!customer.overdue){ %>
-        <div style="background-color:#00FF00" class="col">Al dia</div>
-      <% } else{ %>  
-        <div style="background-color:#FF0000" class="col">Pendiente</div>
-      <% } %>
-
     </div>
   </li>
 
@@ -108,14 +94,6 @@
 
   <li class="list-group-item"> 
     <div class="row">
-      <div class="col" style="max-width: 140px"> <b>Última fecha de pago:</b></div>
-      <div class="col"><%= customer.paymentDate %></div>
-    </div>
-  </li>
-
-
-  <li class="list-group-item"> 
-    <div class="row">
       <div class="col" style="max-width: 140px"> <b>Detalles:</b></div>
       <div class="col"><%= customer.details %></div>
     </div>
@@ -135,11 +113,35 @@
     </div>
   </li>
 
-</ul>
+</ul> -->
 
+<div id="accordion">
+  <% customer.registros.forEach(element => { %>
+  <div class="card">
+    <div class="card-header" id="headingOne">
+      <h5 class="mb-0">
+        <button class="btn btn-link" data-toggle="collapse" data-target="#<%=element.updatedAt%>" aria-expanded="true" aria-controls="collapseOne">
+          <%= element.updatedAt.toISOString().split('T')[0] %>
+        </button>
+      </h5>
+    </div>
 
-<div class="btn-toolbar mb-2 mb-md 0">
-  <div class="btn-group me-2">
-    <a href="/view_historical/<%= customer._id %>" class="btn btn-sm btn-outline-secondary" >Ver Historico</a>
+    <div id="<%=element.updatedAt%>" class="collapse" aria-labelledby="headingOne" data-parent="#accordion">
+      <div class="card-body">
+        <div>
+          Altura: <%= element.height %>cm
+        </div>
+        <div>
+          Peso: <%= element.weight %>kg
+        </div>
+        <div>
+          Grasa corporal: <%= element.bodyFat %>%
+        </div>
+        <div>
+          Masa muscular: <%= element.muscleMass %>kg
+        </div>
+      </div>
+    </div>
   </div>
+  <% }) %>
 </div>

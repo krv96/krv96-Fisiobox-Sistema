@@ -1,5 +1,5 @@
 {
-  "name": "nodejs_user_management",
+  "name": "Fisiobox - Sistema",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -17,7 +17,9 @@
     "express-ejs-layouts": "^2.5.1",
     "express-flash-message": "^2.1.0",
     "express-session": "^1.17.3",
+    "express-toastr": "^2.0.2",
     "method-override": "^3.0.0",
+    "moment": "^2.29.4",
     "mongoose": "^7.0.0"
   },
   "devDependencies": {
